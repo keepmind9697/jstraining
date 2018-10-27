@@ -9,14 +9,14 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-  class MyTitle extends React.Component {
-    render() {
-      return <h1>Hello World</h1>;
+  class MyTitle extends React.Component {  //自定义一个MyTitle类，该类继承了基类React.Component的所有属性和方法。
+    render() {                                          //MyTitle组件必须有render方法
+      return <h1>Hello World</h1>;                //定义输出样式
     }
   };
 
   ReactDOM.render(
-    <MyTitle/>,
+    <MyTitle/>,             //生成一个组件类的实例  -----内存内是怎么样的
     document.getElementById('example')
   );
     </script>
