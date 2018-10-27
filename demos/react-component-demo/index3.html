@@ -9,25 +9,26 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-  class MyTitle extends React.Component {
-    constructor(...args) {
-      super(...args);
-      this.state = {
+  class MyTitle extends React.Component { 
+    constructor(...args) {  //
+      super(...args);       // ES6 规定的写法。
+      this.state = {   //这个对象用来存放内部状态,在constructor里用来定义初始值
         name: '访问者'
       };
     }
 
     handleChange(e) {
-      let name = e.target.value;
-      this.setState({
+      let name = e.target.value;      //这个e 是什么意思 .target.value 是什么 ,获取新组件的name值吗
+      this.setState({         //this.setState方法用来重置this.state  ,引发组件的重新渲染
         name: name
       });
     }
 
     render() {
       return <div>
-        <input type="text" onChange={this.handleChange.bind(this)} />
-        <p>你好，{this.state.name}</p>
+        <input type="text" onChange={this.handleChange.bind(this)} />  //输入框有变动就调用onChange指定的监听函数handleChange ()
+                                      //.bind(this)表示该方法内部的this，绑定当前组件。
+        <p>你好，{this.state.name}</p>     //访问到对象的name属性
       </div>;
     }
   };
