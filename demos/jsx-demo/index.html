@@ -2,15 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="react.js"></script>
-    <script src="react-dom.js"></script>
-    <script src="babel.min.js"></script>
+    <script src="react.js"></script>   // 核心库
+    <script src="react-dom.js"></script>    //react的dom适配器
+    <script src="babel.min.js"></script>    //用来让javascript识别jsx语法的
   </head>
   <body>
     <div id="example"></div>
     <script type="text/babel">
-ReactDOM.render(
-  <span>Hello World!</span>,
+ReactDOM.render(            //将虚拟 DOM (第一个参数)挂载到真实 DOM(第二个参数)。
+  <span>Hello React!</span>,
   document.getElementById('example')
 );
     </script>
