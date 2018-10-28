@@ -13,13 +13,21 @@
     constructor(...args) {
       super(...args);
       this.state = {
-        text: 'World'
+        
+      var d= new Date();
+        text: 'today :'+d.getFullYear()+d.getMonth()+1+d.getDate();
+        
+         isClicked:false
+        }
+        
+        
       };
     }
 
     handleClick() {
+      let isClicked = !this.state.isClicked;  //?
       this.setState({
-        text: 'Clicked'
+        text: 'Clicked'?'Clicked:'today :'+d.getFullYear()+d.getMonth()+1+d.getDate()' //?? 不知道对不对
       });
     }
 
