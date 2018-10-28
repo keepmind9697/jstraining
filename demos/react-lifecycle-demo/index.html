@@ -14,15 +14,15 @@
     constructor(...args) {
       super(...args);
       this.state = {
-        loading: true,
+        loading: true,          //加载为true,显示加载
         error: null,
         data: null
       };
     }
 
-    componentDidMount() {
+    componentDidMount() {           //在组件加载后执行，只执行一次。
       const url = 'https://api.github.com/search/repositories?q=javascript&sort=stars';
-      $.getJSON(url)
+      $.getJSON(url)              //向服务器请求 JSON 数据  ---->重要,josn没有学过,打开网址是一大堆用户数据
        .done(
         (value) => this.setState({
           loading: false,
@@ -40,13 +40,24 @@
       if (this.state.loading) {
         return <span>Loading...</span>;
       } else if (this.state.error !== null) {
-        return <span>Error: {this.state.error}</span>;
+        return <span>Error: {this.state.error}</span>;  //错误对象
       } else {
         /* 你的代码填入这里 */
+          console.log(this.state.data);  //将保存的数据在数据台里打印出来
+            var projects = this.state.data.items;
+            var results = [];
+          projects.forEach(p => {
+               var item = <li>{p.name}</li>;
+               results.push(item);
+            });
+          
+          
+        
         return (
           <div>
             <p>API 数据获取成功</p>
-            <p>改写代码，将结果显示在这里</p>
+            <p><ul>{results}</ul></p>
+           
           </div>
         );
       }
