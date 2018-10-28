@@ -30,6 +30,8 @@
         })
       ).fail(
         (jqXHR, textStatus) => this.setState({
+        //Query封装的XMLHttpRequest对象，简称jqXHR对象。
+        //含有所有原生对象中的属性和方法，jQuery还加入了一些新的属性，例如promise模式的done、fail等方法。
           loading: false,
           error: jqXHR.status
         })
@@ -47,7 +49,7 @@
             var projects = this.state.data.items;
             var results = [];
           projects.forEach(p => {
-               var item = <li>{p.name}</li>;
+               var item = <li>{p.name}</li>;     //变量可以包含这么些?
                results.push(item);
             });
           
